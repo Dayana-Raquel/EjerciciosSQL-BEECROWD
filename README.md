@@ -1,34 +1,34 @@
 # EjerciciosSQL-BEECROWD
 ---
-### Nivel 1:
+## Nivel 1:
 ---
-## 1. CUSTOMER ADDRESS (Dirección de clientes)
+### 1. CUSTOMER ADDRESS (Dirección de clientes)
 La empresa organizará un evento para celebrar el 20.º aniversario del mercado, y para ello, organizaremos una gran celebración en Porto Alegre. También invitamos a todos nuestros clientes registrados en esta ciudad.
 Su tarea consiste en obtener los nombres y direcciones de los clientes residentes en Porto Alegre para entregarles las invitaciones personalmente.
 ![Tabla1](Tabla1.png)
 ![Tabla2](Tabla2.png)
 ![Tabla3](Tabla3.png)
 
-### Solución:
+**Solución:**
 ![Consulta1](Consulta1.png)
 
-### Explicación:
+**Explicación:**
 * *Se seleccionan las columnas name y street de la tabla customers.*
 * *Se extraen aquellos clientes que tengan 'Porto Alegre' en la columna city (ciudad).*
 
 ---
 
-## 2. PROVIDERS' CITY IN ALPHABETICAL ORDER (Ciudad de los proveedores en orden alfabético)
+### 2. PROVIDERS' CITY IN ALPHABETICAL ORDER (Ciudad de los proveedores en orden alfabético)
 La empresa solicita mensualmente un informe de las ciudades donde los proveedores están registrados. Por lo tanto, realice una consulta que devuelva todas las ciudades de los proveedores, pero en orden alfabético.
-NOTA: No debe mostrar ciudades repetidas.
+**NOTA:** No debe mostrar ciudades repetidas.
 ![Tabla4](Tabla4.png)
 ![Tabla5](Tabla5.png)
 ![Tabla6](Tabla6.png)
 
-### Solución:
+**Solución:**
 ![Consulta2](Consulta2.png)
 
-### Explicación:
+**Explicación:**
 * *Recupera los valores de la columna city de la tabla providers.*
 * *DISTINCT elimina los duplicados, es decir, si hay varias filas con la misma ciudad, solo se mostrará una vez.*
 * *ORDER BY, Ordena los resultados de la consulta en orden (ASC) ascendente (A-Z) según el nombre de la ciudad.*
@@ -36,7 +36,7 @@ NOTA: No debe mostrar ciudades repetidas.
 ---
 
 
-## 3. HIGHER AND LOWER PRICE (Precios más altos y más bajos)
+### 3. HIGHER AND LOWER PRICE (Precios más altos y más bajos)
 El sector financiero de nuestra empresa desea conocer los precios más altos y más bajos de los productos que vendemos.
 Para ello, debe mostrar únicamente los precios más altos y más bajos de la tabla de productos.
 
@@ -44,16 +44,16 @@ Para ello, debe mostrar únicamente los precios más altos y más bajos de la ta
 ![Tabla8](Tabla8.png)
 ![Tabla9](Tabla9.png)
 
-### Solución:
+**Solución:**
 ![Consulta3](Consulta3.png)
 
-### Explicación: 
+**Explicación:** 
 * *MAX y MIN, obtienen el precio más alto y más bajo(price) de la tabla products.*
 
 ---
 
 
-## 4. EXPANDING THE BUSINESS (Expansión del Negocio)
+### 4. EXPANDING THE BUSINESS (Expansión del Negocio)
 La empresa de videoclub tiene como objetivo crear varias franquicias en todo Brasil. Para ello, necesitamos saber en qué ciudades viven nuestros clientes.
 Para que nos ayude a seleccionar el nombre de todas las ciudades donde la empresa de alquiler tiene clientes. Por favor, no repita el nombre de la ciudad.
 
@@ -61,26 +61,26 @@ Para que nos ayude a seleccionar el nombre de todas las ciudades donde la empres
 ![Tabla11](Tabla11.png)
 ![Tabla12](Tabla12.png)
 
-### Solución:
+**Solución:**
 ![Consulta4](Consulta4.png)
 
-### Explicación:
+**Explicación:**
 * *Selecciona las ciudades solo una vez de la tabla customers.*
 ---
 
 
-## 5. PROVIDER AJAX SA (Proveedor Ajax SA)
+### 5. PROVIDER AJAX SA (Proveedor Ajax SA)
 El sector financiero ha tenido problemas con la entrega de uno de nuestros proveedores. La entrega de los productos no coincide con la factura.
-Su tarea es mostrar el nombre de los productos y el nombre del proveedor de los productos suministrados por Ajax SA.
+Su tarea es mostrar el nombre de los productos y el nombre del proveedor de los productos suministrados por **"Ajax SA"**.
 
 ![Tabla13](Tabla13.png)
 ![Tabla14](Tabla14.png)
 ![Tabla15](Tabla15.png)
 
-### Solución:
+**Solución:**
 ![Consulta5](Consulta5.png)
 
-### Explicación:
+**Explicación:**
 ```sql
 SELECT products.name, providers.name
 FROM products
@@ -98,17 +98,17 @@ WHERE providers.name='Ajax SA';
 ---
 
 
-## 6. LEGAL PERSON (Persona Jurídica) 
+### 6. LEGAL PERSON (Persona Jurídica) 
 El sector de ventas desea realizar una promoción para todos los clientes que sean personas jurídicas. Para ello, debe mostrar el nombre de los clientes que sean personas jurídicas.
 
 ![Tabla16](Tabla16.png)
 ![Tabla17](Tabla17.png)
 ![Tabla18](Tabla18.png)
 
-### Solución:
+**Solución:**
 ![Consulta6](Consulta6.png)
 
-### Explicación: 
+**Explicación:**
 ```sql
 SELECT customers.name
 FROM customers
@@ -127,7 +127,7 @@ ON customers.id = legal_person.id_customers
 ---
 
 
-## 7. PASSWORDS (Contraseñas)
+### 7. PASSWORDS (Contraseñas)
 Te contrataron como consultor para una empresa. Al analizar la base de datos, observaste que las contraseñas se almacenan como archivos de texto y, como todos saben, esto es una práctica de seguridad pésima, ya que no están cifradas.
 Por lo tanto, debes convertir todas las contraseñas al formato MD5. Muestra el ID del cliente, la contraseña antes de la conversión y el nuevo MD5.
 
@@ -135,10 +135,10 @@ Por lo tanto, debes convertir todas las contraseñas al formato MD5. Muestra el 
 ![Tabla20](Tabla20.png)
 ![Tabla21](Tabla21.png)
 
-### Solución:
+**Solución:**
 ![Consulta7](Consulta7.png)
 
-### Explicación: 
+**Explicación:**
 ```sql
 SELECT id, password, MD5(password) AS MD5
 ```
@@ -153,7 +153,7 @@ FROM account
 ---
 
 
-## 8. VIRUSES (Virus)
+### 8. VIRUSES (Virus)
 Los virus están evolucionando, pero nuevas investigaciones han demostrado que al cambiar algunas proteínas, la vacuna se vuelve invencible. La proteína H1 (hemaglutinina), al ser reemplazada por la proteína X (xenomorfina), tiene efectos interesantes contra casi todas las enfermedades virales. Algunos conspiranoicos afirman que, tras el descubrimiento de la vacuna, se encontraron extrañas criaturas de 3 metros de altura en los alrededores de los laboratorios, pero esto es claramente falso.
 Por lo tanto, se debe reemplazar cada cadena "H1" (hemaglutinina) por "X" (xenomorfina).
 
@@ -161,30 +161,30 @@ Por lo tanto, se debe reemplazar cada cadena "H1" (hemaglutinina) por "X" (xenom
 ![Tabla23](Tabla23.png)
 ![Tabla24](Tabla24.png)
 
-### Solución:
+**Solución:**
 ![Consulta8](Consulta8.png)
 
-### Explicación: 
+**Explicación:**
 * *Busca "H1" dentro del campo name y lo cambia por "X"*
 * *AS name, Cambia el nombre de la columna en la salida.*
 
 ---
 
 ---
-### Nivel 2:
+## Nivel 2:
 ---
 
-## 9. UNDER 10 OR GREATER THAN 100 (Menos de 10 o más de 100)
+### 9. UNDER 10 OR GREATER THAN 100 (Menos de 10 o más de 100)
 El sector financiero de la empresa necesita un informe que muestre el ID y el nombre de los productos cuyo precio sea menor a 10 o mayor a 100.
 
 ![Tabla25](Tabla25.png)
 ![Tabla26](Tabla26.png)
 ![Tabla27](Tabla27.png)
 
-### Solución:
+**Solución:**
 ![Consulta9](Consulta9.png)
 
-### Explicación: 
+**Explicación:**
 * *Se selecciona el id y el name de la tabla products*
 
 ```sql
@@ -192,8 +192,10 @@ WHERE price < 10 OR price > 100;
 ```
 * *Filtra productos cuyo price sea menor a 10 o mayor a 100*
 
+---
 
-## 10. CHEAP MOVIES (Películas baratas)
+
+### 10. CHEAP MOVIES (Películas baratas)
 En el pasado, el estudio organizó un evento con varias películas en oferta. Queremos saber cuáles eran.
 Tu tarea para ayudarnos a seleccionar el ID y el nombre de las películas con un precio inferior a 2.00.
 
@@ -201,10 +203,10 @@ Tu tarea para ayudarnos a seleccionar el ID y el nombre de las películas con un
 ![Tabla29](Tabla29.png)
 ![Tabla30](Tabla30.png)
 
-### Solución:
+**Solución:**
 ![Consulta10](Consulta10.png)
 
-### Explicación: 
+**Explicación:**
 ```sql
 SELECT m.id, m.name
 FROM movies m
@@ -226,7 +228,7 @@ WHERE p.value < 2.00;
 ---
 
 
-## 11. SUPER LUXURY (Superlujo)
+### 11. SUPER LUXURY (Superlujo)
 Nuestra empresa busca firmar un nuevo contrato para el suministro de nuevos productos de superlujo, y para ello necesitamos información sobre nuestros productos.
 Su tarea consiste en mostrar el nombre de los productos, el nombre de los proveedores y el precio de los productos cuyo precio sea superior a 1000 y su categoría sea "Superlujo".
 
@@ -234,10 +236,10 @@ Su tarea consiste en mostrar el nombre de los productos, el nombre de los provee
 ![Tabla32](Tabla32.png)
 ![Tabla33](Tabla33.png)
 
-### Solución:
+**Solución:**
 ![Consulta11](Consulta11.png)
 
-### Explicación: 
+**Explicación:**
 ```sql
 SELECT p.name AS product_name, v.name AS provider_name, p.price 
 FROM products p
@@ -267,16 +269,16 @@ WHERE p.price > 1000 AND c.name = 'Super Luxury';
 ---
 
 
-## 12. HOW MUCH EARN A DOCTOR? (¿Cuánto gana un médico?)
+### 12. HOW MUCH EARN A DOCTOR? (¿Cuánto gana un médico?)
 Trabajas en el sector de TI en un hospital y necesitas calcular los ingresos por pagos de cada médico. Cada médico gana 150 $ por hora más un porcentaje que depende del turno de trabajo. Por ejemplo, el doctor Wellington trabajó 1 hora en el turno diurno y 2 horas en el nocturno; por lo tanto, su salario semanal será: ((1 * 150) + 1%) + ((2 * 150) + 15%) = 496,5. Además, puedes usar la función ROUND(valor,1) para mostrar el salario con 1 decimal y ordenar el resultado de mayor a menor.
 ![Tabla34](Tabla34.png)
 ![Tabla35](Tabla35.png)
 ![Tabla36](Tabla36.png)
 
-### Solución:
+**Solución:**
 ![Consulta12](Consulta12.png)
 
-### Explicación: 
+**Explicación:**
 ```sql
 SELECT d.name, ROUND(SUM((a.hours * 150) + ((a.hours * 150) * (w.bonus / 100))), 1) AS salary
 FROM doctors d
@@ -308,17 +310,17 @@ ORDER BY salary DESC;
 * *Ordena el salario de mayor a menor*
 
 
-## 13. SILLAS ADYACENTES
+### 13. SILLAS ADYACENTES
 Encuentra las sillas adyacentes y disponibles en cada fila del salón de clases. La primera columna del resultado debe contener el identificador de fila, la segunda columna el número de la silla de la izquierda y la tercera el número de la silla de la derecha. El resultado debe ordenarse por el valor de la segunda columna del resultado (left).
 ![Figura1](Figura1.png)
 ![Tabla37](Tabla37.png)
 ![Tabla38](Tabla38.png)
 ![Tabla39](Tabla39.png)
 
-### Solución:
+**Solución:**
 ![Consulta13](Consulta13.png)
 
-### Explicación: 
+**Explicación:**
 ```sql
 SELECT c1.queue, c1.id AS left, c2.id AS right
 ```
@@ -353,18 +355,17 @@ ORDER BY c1.id
 
 ---
 
-
-## 14. CLASIFICACIÓN DE UN ÁRBOL
+### 14. CLASIFICACIÓN DE UN ÁRBOL
 Dado el siguiente árbol binario equilibrado almacenado en la tabla nodes, clasifique cada nodo con los tipos LEAF, INNER y ROOT. Presentar el resultado ordenado por el valor del identificador del nodo.
 ![Figura2](Figura2.png)
 ![Tabla40](Tabla40.png)
 ![Tabla41](Tabla41.png)
 ![Tabla42](Tabla42.png)
 
-### Solución:
+**Solución:**
 ![Consulta14](Consulta14.png)
 
-### Explicación: 
+**Explicación:** 
 ```sql
 SELECT DISTINCT node_id,
   ```
@@ -395,18 +396,17 @@ ORDER BY node_id;
 
 ---
 
-
-## 15. SEGUIDORES
+### 15. SEGUIDORES
 En una red social con varios usuarios que comparten información, es común que un usuario siga a otros. Determina qué usuarios se siguen entre sí, por ejemplo Francisco sigue a Laura y Laura sigue a Francisco. El resultado debe contener dos columnas con los nombres de los dos usuarios que se suceden. La primera columna debe contener el nombre del usuario con menor número de publicaciones y la segunda con mayor cantidad de publicaciones, por ejemplo entre Francisco y Laura, Francisco tiene 23 publicaciones y Laura 55, por lo que Francisco aparece en la primera columna y Laura en la segunda columna. Además, debes ordenar el resultado por la identificación del usuario en la primera columna.
 ![Figura3](Figura3.png)
 ![Tabla43](Tabla43.png)
 ![Tabla44](Tabla44.png)
 ![Tabla45](Tabla45.png)
 
-### Solución:
+**Solución:**
 ![Consulta15](Consulta15.png)
 
-### Explicación: 
+**Explicación:** 
 ```sql
 FROM
   followers f
@@ -461,17 +461,16 @@ u1.user_id;
 
 ---
 
-
-## 16. SEGUNDO MAYOR Y MENOR
+### 16. SEGUNDO MAYOR Y MENOR
 Encuentre la ciudad con la segunda población más grande y luego la ciudad con la segunda población más pequeña.
 ![Tabla46](Tabla46.png)
 ![Tabla47](Tabla47.png)
 ![Tabla48](Tabla48.png)
 
-### Solución:
+**Solución:**
 ![Consulta16](Consulta16.png)
 
-### Explicación: 
+**Explicación:**
 ```sql
 WHERE population = (SELECT MAX(population)
 FROM cities
