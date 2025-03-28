@@ -53,7 +53,7 @@ La auditoría financiera de la empresa nos solicita un informe correspondiente a
 ![Consulta20](Consulta20.png) 
 
 **Explicación:** 
-* *Se utiliza la cláusula BETWEEN para filtrar las fechas correspondientes a la primera mitad del año.* --- 
+* *Se utiliza la cláusula BETWEEN para filtrar las fechas correspondientes a la primera mitad del año.* 
 ---
 
 ### 21. AMOUNTS BETWEEN 10 AND 20 (Cantidades entre 10 y 20) 
@@ -67,4 +67,56 @@ Al entregar el informe sobre la cantidad de productos en stock de la empresa, un
 
 **Explicación:** 
 * *Se filtra tanto por el patrón en el nombre del proveedor como por el rango de la cantidad del producto.* 
+--- 
+
+### 22. NUMBER OF CITIES PER CUSTOMERS (Número de ciudades por cliente) 
+La junta directiva de la empresa te pidió un informe sencillo sobre cuántas ciudades ha alcanzado la empresa. Para ello, debes mostrar el número de ciudades distintas que aparecen en la tabla de clientes. 
+![Tabla4](Tabla64.png) 
+![Tabla5](Tabla65.png) 
+![Tabla6](Tabla66.png) 
+
+**Solución:** 
+![Consulta2](Consulta22.png) 
+
+**Explicación:** 
+* *Se utiliza la función COUNT combinada con DISTINCT para contar únicamente las ciudades únicas.*
+--- 
+
+### 23. NUMBER OF CHARACTERS (Caracteres de Números)
+La Organización Global de Caracteres en los Nombres de las Personas (GOCPN) realizó un censo para determinar cuántos caracteres tienen los nombres de las personas. Para ayudar a la GOCPN, debes mostrar el número de caracteres de cada nombre, ordenados de mayor a menor. 
+![Tabla4](Tabla67.png) 
+![Tabla5](Tabla68.png) 
+![Tabla6](Tabla69.png) 
+
+**Solución:** 
+![Consulta2](Consulta23.png) 
+
+**Explicación:** 
+* *Se utiliza la función CHARACTER_LENGTH para obtener la longitud de cada nombre y se ordena el resultado de forma descendente.* 
+--- 
+
+### 24. TAXES (Impuestos)
+Vas a la reunión internacional de impuestos personales y tu propuesta es: Todo individuo con ingresos superiores a 3000 debe pagar un impuesto al gobierno, que equivale al 10% de sus ingresos. Muestra el nombre y el valor del impuesto de cada persona que gana más de 3000, con dos decimales de precisión. 
+![Tabla4](Tabla70.png) 
+![Tabla5](Tabla71.png) 
+![Tabla6](Tabla72.png) 
+
+**Solución:** 
+![Consulta2](Consulta24.png) 
+
+**Explicación:** 
+* *Se filtra por salario y se calcula el impuesto multiplicando el salario por 0.10, redondeando el resultado a dos decimales.* 
+--- 
+
+### 25. MOST FREQUENT (Más frecuentes)
+Dada una tabla de una sola columna con valores enteros, ¿cuál es el valor más frecuente, es decir, la moda estadística de los valores? 
+![Tabla4](Tabla73.png) 
+![Tabla5](Tabla74.png) 
+![Tabla6](Tabla75.png) 
+
+**Solución:** 
+![Consulta2](Consulta25.png) 
+
+**Explicación:** 
+* *Se agrupan los registros por la columna indicada y se cuenta la frecuencia de cada valor, devolviendo el que tiene mayor ocurrencia.* 
 --- 
