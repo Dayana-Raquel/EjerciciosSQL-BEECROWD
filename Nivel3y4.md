@@ -71,12 +71,12 @@ Al entregar el informe sobre la cantidad de productos en stock de la empresa, un
 
 ### 22. NUMBER OF CITIES PER CUSTOMERS (Número de ciudades por cliente) 
 La junta directiva de la empresa te pidió un informe sencillo sobre cuántas ciudades ha alcanzado la empresa. Para ello, debes mostrar el número de ciudades distintas que aparecen en la tabla de clientes. 
-![Tabla4](Tabla64.png) 
-![Tabla5](Tabla65.png) 
-![Tabla6](Tabla66.png) 
+![Tabla64](Tabla64.png) 
+![Tabla65](Tabla65.png) 
+![Tabla66](Tabla66.png) 
 
 **Solución:** 
-![Consulta2](Consulta22.png) 
+![Consulta22](Consulta22.png) 
 
 **Explicación:** 
 * *Se utiliza la función COUNT combinada con DISTINCT para contar únicamente las ciudades únicas.*
@@ -84,12 +84,12 @@ La junta directiva de la empresa te pidió un informe sencillo sobre cuántas ci
 
 ### 23. NUMBER OF CHARACTERS (Caracteres de Números)
 La Organización Global de Caracteres en los Nombres de las Personas (GOCPN) realizó un censo para determinar cuántos caracteres tienen los nombres de las personas. Para ayudar a la GOCPN, debes mostrar el número de caracteres de cada nombre, ordenados de mayor a menor. 
-![Tabla4](Tabla67.png) 
-![Tabla5](Tabla68.png) 
-![Tabla6](Tabla69.png) 
+![Tabla67](Tabla67.png) 
+![Tabla68](Tabla68.png) 
+![Tabla69](Tabla69.png) 
 
 **Solución:** 
-![Consulta2](Consulta23.png) 
+![Consulta23](Consulta23.png) 
 
 **Explicación:** 
 * *Se utiliza la función CHARACTER_LENGTH para obtener la longitud de cada nombre y se ordena el resultado de forma descendente.* 
@@ -97,12 +97,12 @@ La Organización Global de Caracteres en los Nombres de las Personas (GOCPN) rea
 
 ### 24. TAXES (Impuestos)
 Vas a la reunión internacional de impuestos personales y tu propuesta es: Todo individuo con ingresos superiores a 3000 debe pagar un impuesto al gobierno, que equivale al 10% de sus ingresos. Muestra el nombre y el valor del impuesto de cada persona que gana más de 3000, con dos decimales de precisión. 
-![Tabla4](Tabla70.png) 
-![Tabla5](Tabla71.png) 
-![Tabla6](Tabla72.png) 
+![Tabla70](Tabla70.png) 
+![Tabla71](Tabla71.png) 
+![Tabla72](Tabla72.png) 
 
 **Solución:** 
-![Consulta2](Consulta24.png) 
+![Consulta24](Consulta24.png) 
 
 **Explicación:** 
 * *Se filtra por salario y se calcula el impuesto multiplicando el salario por 0.10, redondeando el resultado a dos decimales.* 
@@ -110,13 +110,72 @@ Vas a la reunión internacional de impuestos personales y tu propuesta es: Todo 
 
 ### 25. MOST FREQUENT (Más frecuentes)
 Dada una tabla de una sola columna con valores enteros, ¿cuál es el valor más frecuente, es decir, la moda estadística de los valores? 
-![Tabla4](Tabla73.png) 
-![Tabla5](Tabla74.png) 
-![Tabla6](Tabla75.png) 
+![Tabla73](Tabla73.png) 
+![Tabla74](Tabla74.png) 
+![Tabla75](Tabla75.png) 
 
 **Solución:** 
-![Consulta2](Consulta25.png) 
+![Consulta25](Consulta25.png) 
 
 **Explicación:** 
 * *Se agrupan los registros por la columna indicada y se cuenta la frecuencia de cada valor, devolviendo el que tiene mayor ocurrencia.* 
+--- 
+
+
+---
+## Nivel 4:
+---
+
+### 26. BASIC SELECT (Seleccionar básico)
+La empresa está realizando una encuesta sobre cuántos clientes están registrados en los estados; sin embargo, se omitieron los datos del estado de **'Rio Grande do Sul'**. 
+Debes mostrar los nombres de todos los clientes cuyo estado sea **'RS'**. 
+![Tabla76](Tabla76.png) 
+![Tabla77](Tabla77.png) 
+![Tabla78](Tabla78.png) 
+
+**Solución:** 
+![Consulta26](Consulta26.png) 
+
+**Explicación:** 
+* *Se utiliza la función UPPER para comparar de forma insensible al caso el estado con el valor 'RS'.* 
+---
+
+### 27. EXECUTIVE REPRESENTATIVES (Representantes ejecutivos)
+El sector financiero necesita un informe sobre los proveedores de los productos que vendemos. Los informes incluyen todas las categorías, pero por alguna razón, los proveedores de productos cuya categoría es ejecutiva no aparecen en el informe. Tu tarea es devolver los nombres de los productos y de los proveedores cuya categoría tenga el ID **6**. 
+![Tabla79](Tabla79.png) 
+![Tabla80](Tabla80.png) 
+![Tabla81](Tabla81.png) 
+
+**Solución:** 
+![Consulta27](Consulta27.png) 
+
+**Explicación:** 
+* *Se realiza un JOIN entre las tablas de productos y proveedores, filtrando aquellos productos cuya categoría es la indicada.* 
+--- 
+
+### 28. ACTION MOVIES (Películas de acción)
+Una contratista de una videotienda fue contratada para catalogar sus películas. Necesitan que selecciones el código y el nombre de las películas cuya descripción del género sea **'Action'**. 
+![Tabla82](Tabla82.png) 
+![Tabla83](Tabla83.png) 
+![Tabla84](Tabla84.png) 
+
+**Solución:** 
+![Consulta28](Consulta28.png) 
+
+**Explicación:** 
+* *Recupera los valores de la columna city de la tabla providers.* 
+--- 
+
+### 29. CATEGORIES WITH VARIOUS PRODUCTS (Categorías con varios productos)
+La industria de ventas necesita un informe para conocer qué productos quedan en stock. Para ayudar a la industria de ventas, muestra el nombre del producto y el nombre de la categoría para aquellos productos cuya cantidad sea mayor a 100 y cuyo ID de categoría sea **1, 2, 3, 6 o 9**. 
+Muestra los resultados en orden ascendente por ID de categoría. 
+![Tabla85](Tabla85.png) 
+![Tabla86](Tabla86.png) 
+![Tabla87](Tabla87.png) 
+
+**Solución:**
+![Consulta2](Consulta29.png) 
+
+**Explicación:** 
+* *Se filtran los productos con cantidad mayor a 100 y se limita la búsqueda a las categorías indicadas, ordenando el resultado por el ID de la categoría de forma ascendente.* 
 --- 
