@@ -174,8 +174,68 @@ Muestra los resultados en orden ascendente por ID de categoría.
 ![Tabla87](Tabla87.png) 
 
 **Solución:**
-![Consulta2](Consulta29.png) 
+![Consulta29](Consulta29.png) 
 
 **Explicación:** 
 * *Se filtran los productos con cantidad mayor a 100 y se limita la búsqueda a las categorías indicadas, ordenando el resultado por el ID de la categoría de forma ascendente.* 
 --- 
+
+
+
+### 30. CPF VALIDATION (Validación del CPF)
+Los gerentes de comunicaciones de la empresa desean un informe sobre los datos de clientes personas naturales que están registrados en la base de datos. Pero el informe antiguo tenía un problema: los datos del CPF de los clientes venían sin validación. Tu tarea ahora es seleccionar todos los CPFs de todos los clientes y aplicar una máscara al mostrar los datos. La máscara para el CPF es: **'000.000.000-00'**. 
+![Tabla88](Tabla88.png) 
+![Tabla89](Tabla89.png) 
+![Tabla90](Tabla90.png) 
+
+**Solución:**
+![Consulta30](Consulta30.png) 
+
+**Explicación:** 
+* *Se utilizan las funciones SUBSTRING y CONCAT para extraer y unir las partes del CPF aplicando la máscara requerida.* 
+--- 
+
+### 31. CONTEST (Concurso)
+La Universidad de Tecnología de Marte tiene plazas abiertas para investigadores. Sin embargo, la computadora responsable de procesar los datos de los candidatos está rota. Debes presentar la lista de candidatos, que contenga el nombre y la puntuación final (con dos decimales de precisión) de cada candidato. Recuerda mostrar la lista ordenada por puntuación (de mayor a menor). La puntuación se calcula mediante la media ponderada descrita como: 
+![Figura4](Figura4.png) 
+![Tabla91](Tabla91.png) 
+![Tabla92](Tabla92.png) 
+![Tabla93](Tabla93.png) 
+
+**Solución:** 
+![Consulta31](Consulta31.png) 
+
+**Explicación:** 
+* *Se calcula la media ponderada multiplicando cada puntuación por su respectiva ponderación, dividiendo entre 10 y ordenando los resultados de mayor a menor.* 
+--- 
+
+### 32. CEARENSE CHAMPIONSHIP (Campeonato Cearense)
+El Campeonato Cearense de Fútbol atrae a miles de aficionados cada año y trabajas para un periódico, estando a cargo de calcular la tabla de posiciones. Muestra una tabla con las siguientes columnas: nombre del equipo, número de partidos, victorias, derrotas, empates y puntos. Sabiendo que la puntuación se calcula asignando 3 puntos por victoria, 1 punto por empate y 0 puntos por derrota, muestra la tabla ordenada de mayor a menor puntuación. 
+![Tabla94](Tabla94.png) 
+![Tabla95](Tabla95.png) 
+![Tabla96](Tabla96.png) 
+
+**Solución:** 
+![Consulta32](Consulta32.png) 
+
+**Explicación:** 
+* *La CTE `outcomes` extrae, por cada partido, el resultado (victoria, derrota o empate) para cada equipo, independientemente de si aparece en la columna `team_1` o `team_2`.* 
+* *Luego, se agrupa por el nombre del equipo (uniéndolo con la tabla `teams`) y se suman los partidos, victorias, derrotas y empates.* 
+* *El puntaje se calcula como 3 puntos por victoria y 1 por empate.* 
+* *Finalmente se ordena de mayor a menor puntaje (y en caso de empate, por nombre).* 
+--- 
+
+### 33. EMPLOYEES CPF (CPF de Empleados)
+Muestra el CPF, el nombre de los empleados y el nombre del departamento de aquellos empleados que no trabajan en ningún proyecto. El resultado debe estar ordenado por CPF. 
+![Tabla97](Tabla97.png) 
+![Tabla98](Tabla98.png) 
+![Tabla99](Tabla99.png) 
+
+**Solución:** 
+![Consulta33](Consulta33.png) 
+
+**Explicación:** 
+* *1. Se une la tabla **empregados** con **departamentos** usando la columna *dnumero* para obtener el nombre del departamento.* 
+* *2. Se filtran los empleados cuyo CPF **no aparece** en la tabla *trabalha* (esto indica que no están asignados a ningún proyecto).*
+*  *3. Se ordena el resultado por CPF.* 
+---
