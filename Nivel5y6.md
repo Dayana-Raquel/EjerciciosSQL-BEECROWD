@@ -35,3 +35,32 @@ Su tarea es proporcionarnos el ID y el nombre de los clientes que aún no han al
 ---
 
 
+### 36. LEAGUE(Liga) 
+La Liga Internacional de Excavaciones Subterráneas es un éxito entre los deportes alternativos. Sin embargo, el personal encargado de organizar los eventos no entiende nada de informática; solo saben excavar y las reglas del deporte. Por ello, te contrataron para resolver el problema de la Liga.
+Selecciona a los tres primeros clasificados con la frase inicial "Podio:" y selecciona a los dos últimos, que descenderán a una liga inferior con la frase inicial "Degradado:".
+![Tabla106](imagenes/Tabla106.png) 
+![Tabla107](imagenes/Tabla107.png) 
+![Tabla108](imagenes/Tabla108.png) 
+
+**Solución:**
+![Consulta36](imagenes/Consulta36.png) 
+
+**Explicación:** 
+* *Se combinan dos consultas: una para los tres primeros lugares y otra para los dos últimos, utilizando UNION ALL y CONCAT para formatear los nombres.* 
+---
+
+### 37. STUDENTS GRADES(Calificaciones de los estudiantes) 
+El semestre terminó en la Universidad de Transilvania del Sur. Se cerraron todos los grados, y solo Alquimia 104 no ha publicado su lista de estudiantes aprobados.
+Por lo tanto, debe mostrar la palabra "Aprobado:" junto al nombre del estudiante y la calificación para aquellos aprobados (calificación ≥7).
+Recuerde ordenar la lista por grado (primero las calificaciones más altas).
+![Tabla109](imagenes/Tabla109.png) 
+![Tabla110](imagenes/Tabla110.png) 
+![Tabla111](imagenes/Tabla111.png) 
+
+**Solución:**
+![Consulta37](imagenes/Consulta37.png) 
+
+**Explicación:** 
+* *Se calculan las notas promedio de los estudiantes y se filtran aquellos con promedio mayor o igual a 7.0.* 
+---
+
