@@ -64,3 +64,46 @@ Recuerde ordenar la lista por grado (primero las calificaciones más altas).
 * *Se calculan las notas promedio de los estudiantes y se filtran aquellos con promedio mayor o igual a 7.0.* 
 ---
 
+### 38. RICHARD'S MULTIVERSE(El Multiverso de Richard) 
+Richard es un científico famoso por su teoría del multiverso, donde describe cada conjunto hipotético de universos paralelos mediante una base de datos. Gracias a eso, ahora tienes un trabajo.
+Como primera tarea, debes seleccionar cada Richard de las dimensiones C875 y C774, junto con su probabilidad de existencia (el famoso factor N) con tres decimales de precisión.
+Recuerda que el factor N se calcula multiplicando el valor omega por 1618. Los datos deben ordenarse por el valor omega más bajo.
+
+![Tabla112](imagenes/Tabla112.png) 
+![Tabla113](imagenes/Tabla113.png) 
+![Tabla114](imagenes/Tabla114.png) 
+
+**Solución:**
+![Consulta38](imagenes/Consulta38.png) 
+
+**Explicación:** 
+* *Se seleccionan registros de vida en dimensiones específicas cuyo nombre comienza con 'Richard', calculando el "Fator N" como el producto de omega por 1.618.* 
+---
+
+### 39. THE SENSOR MESSAGE(El mensaje del sensor) 
+Un sensor captura la temperatura ambiente cada minuto. Los registros también tienen un marcador que, cada vez que la temperatura cambia, aumenta con respecto a la última captura. Cuando el sensor almacena 15 registros, prepara un mensaje para enviarlo a la computadora central. Para reducir el tamaño del mensaje, el sensor compacta los registros de temperatura cercanos y suma el número de registros compactados. Cree una consulta para resolver este problema, mostrando la temperatura y el número de registros coincidentes.
+
+![Tabla115](imagenes/Tabla115.png) 
+![Tabla116](imagenes/Tabla116.png) 
+![Tabla117](imagenes/Tabla117.png) 
+
+**Solución:**
+![Consulta39](imagenes/Consulta39.png) 
+
+**Explicación:** 
+* *Se utiliza una CTE para seleccionar sensores con temperaturas entre 20 y 30 grados, ordenando los resultados por ID de sensor.* 
+---
+
+### 40. PACKAGE DELIVERY(Entrega de paquetes)
+Trabaja para una empresa de mensajería y necesita indicar urgentemente el año y el nombre de todos los clientes que enviaron y recibieron paquetes azules o desde el año 2015. Además, debe indicar que la dirección del remitente o destinatario no es de Taiwán. Además, debe ordenar el resultado por año de forma decreciente. 
+
+![Tabla118](imagenes/Tabla118.png) 
+![Tabla119](imagenes/Tabla119.png) 
+![Tabla120](imagenes/Tabla120.png) 
+
+**Solución:**
+![Consulta40](imagenes/Consulta40.png) 
+
+**Explicación:** 
+* *Se extraen los años y nombres de clientes que enviaron o recibieron paquetes azules, asegurando que no haya duplicados con DISTINCT.* 
+---
